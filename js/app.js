@@ -26,13 +26,14 @@ function requestBreweries(details) {
 }
 
 function post_success_crypto(response) {
-  let crypto = document.getElementById(`button`);
+  let crypto = document.getElementById(`crypto`);
   for (let i = 0; i < response[`data`].length; i++) {
     crypto.insertAdjacentHTML(
       `afterend`,
       `
     <h1>${response[`data`][i][`symbol`]}</h1>
     <h3>$ ${response[`data`][i][`lastPrice`]}</h3>
+    <hr>
     `
     );
   }
